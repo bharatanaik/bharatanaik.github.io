@@ -1,0 +1,37 @@
+section.terminal {
+    background-color: #383737;
+    padding: 20px;
+
+    color: #00FD61;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    height: 300px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+section.terminal a{
+    color: #00FD61;
+}
+
+.terminal-input-block {
+    display: flex;
+    position: absolute;
+    top: 90%;
+}
+
+.terminal-input-block input {
+    border: none;
+    color: #00FD61;
+    background-color: #383737;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+
+.terminal-input-block input:focus {
+    outline: none;
+}
+

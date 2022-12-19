@@ -1,0 +1,59 @@
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+
+}
+
+nav {
+    padding: 10px 10px 20px 20px;
+    background-color: rgb(86, 32, 178);
+    display: block;
+}
+
+nav .right-nav {
+
+    float: right;
+    display: inline;
+    position: relative;
+
+}
+
+nav .left-nav {
+    display: inline;
+    text-align: left;
+}
+
+body {
+    margin: 0;
+}
+
+html {
+    margin: 0;
+    background-color: #ffffff;
+}
+
+.name-heading {
+    background: linear-gradient(#383737, #383737);
+    padding: 25px;
+    border-radius: 10px;
+    
+    color: aliceblue;
+    margin: 20px;
+    display: block;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+footer p {
+    color: aliceblue;
+    text-align: center;
+}
