@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedan NGO Report generator</title>
+    <link rel="stylesheet" href="report-generator.css">
+</head>
+
+<body>
+    <nav>
+        <h1>Vedan NGO report generator</h1>
+    </nav>
+    <div class="row">
+
+        <div class="detail-form column">
+            <p><label for="id-school-name">School name: </label><input type="text" id="id-school-name" onkeyup="set_value(this.value, 'school-name')"></p>
+            <p><label for="id-volunteer-name">Volunteer name:</label><input type="text" id="id-volunteer-name" onkeyup="set_value(this.value, 'volunteer-name')"></p>
+            <p><label for="id-branch">Branch: </label><input type="text" id="branch" onkeyup="set_value(this.value, 'branch-name')"></p>
+            <p>Students (Click "+" to add more student):<input type="button" value="+" onclick="add_student();"> </p>
+            <div class="student-input-area"></div>
+            <p>
+                <label for="id-group-photo">Group photo of volunteer and students:</label>
+                <input type="file" id="id-group-photo" onchange="loadImage(event)">
+            </p>
+            <p><label for="id-chapter-name">Chapter name: </label><input type="text" id="id-chapter-name" onkeyup="set_value(this.value, 'chapter-name')"></p>
+            <p><label for="id-date">Date: </label><input type="text" id="id-date" onkeyup="set_value(this.value, 'date')"></p>
+            <p>
+                <label for="id-brief-note">A brief note on the chapters covered</label>
+            </p>
+            <textarea rows="7" id="id-brief-note" placeholder="A brief note on the chapters covered..." onkeyup="set_value(this.value, 'brief-note')"></textarea>
+            <button onclick="window.print()">Generate PDF!</button>
+        </div>
+        
+
+        <div id="section-to-print" class="pdf-view column">
+            <div class="heading">
+                <h1>Report to Vedan NGO</h1>
+                <h2>Zero Waste Campus</h2>
+                <hr>
+            </div>
+            <div class="author-details">
+                <p>School name: <b id="school-name"></b></p>
+                <p>Volunteer name: <b  id="volunteer-name"></b></p>
+                <p>Branch: <b  id="branch-name"></b></p>
+            </div>
+            <div class="student-details">
+                <table>
+                    <thead>
+                        <tr><th>SI. No</th><th>Name</th><th>Class</th></tr>
+                    </thead>
+                    <tbody id="student-area">
+                    </tbody>
+                </table>
+            </div>
+            <div class="group-photo">
+                <img id="group-photo" src="#" alt="">
+            </div>
+            <div class="activity-details">
+                <p>Chapter name: <b id="chapter-name"></b></p>
+                <p>Date: <b id="date"></b></p>
+                <p id="brief-note"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

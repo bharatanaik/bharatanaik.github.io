@@ -5,8 +5,9 @@ commands = {
         "phone: +919980776034",
         "",
         "<b>Social Media,<b>",
-        "* Instagram <a href='https://www.instagram.com/bharat._naik/'>@bharat._naik</a>"
-        
+        "* Instagram <a href='https://www.instagram.com/bharat._naik/'>@bharat._naik</a>",
+        "* Github "
+
     ],
     "projects":[
         "<a href='https://npuspta.org' target='_blank'>NPUSPTA</a>",
