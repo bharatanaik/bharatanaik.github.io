@@ -34,12 +34,10 @@ table{
   }
 }
 
-.detail-form {
-  border: 1px solid black;
-}
+.pdf-view , .detail-form{
+  border:1px dotted black;
+  border-radius: 10px;
 
-.pdf-view {
-  border: 1px solid black;
 
 }
 
@@ -53,28 +51,60 @@ table{
   padding: 10px;
 }
 
-nav {
-  text-align: center;
-  padding: 20px;
-}
+nav, footer {
+  padding: 10px;
+  background-color: #34568B;
+  color: aliceblue;
+  }
 
 body {
   margin: 0;
 }
 
+
+.row{
+  height:680px;
+}
 * {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   box-sizing: border-box;
 }
-
+.mobile-text{
+  display: none;
+  margin: 10px;
+}
 @media screen and (max-width: 600px) {
   .column {
       width: 100%;
+      margin: auto;
+      padding: 20px;
+      
   }
   .row{
       display: block;
+  }
+
+  footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .mobile-text{
+    display: block;
   }
 }
 
 textarea {
   width: 100%;
+}
+
+
+
+button{
+  background-color: #34568B;
+  color: aliceblue;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 10px;
 }
