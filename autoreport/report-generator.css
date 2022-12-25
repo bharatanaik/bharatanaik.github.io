@@ -37,8 +37,6 @@ table{
 .pdf-view , .detail-form{
   border:1px dotted black;
   border-radius: 10px;
-
-
 }
 
 .row {
@@ -62,9 +60,6 @@ body {
 }
 
 
-.row{
-  height:680px;
-}
 * {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   box-sizing: border-box;
