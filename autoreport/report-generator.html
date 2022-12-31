@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vedan NGO Report generator</title>
     <link rel="stylesheet" href="report-generator.css">
+    <link rel="stylesheet" href="font.css">
 </head>
 
 <body>
@@ -16,15 +17,21 @@
     <div class="row">
         <p class="mobile-text">Mobile browser doesn't have pdf generator, please use PC</p>
         <div class="detail-form column">
-            <p><label for="id-school-name">School name: </label><input type="text" id="id-school-name" onkeyup="set_value(this.value, 'school-name')"></p>
+            <p><label for="id-school-name">School name: </label><input type="text" id="id-school-name" value="GLPS BHATARAHALLI" onkeyup="set_value(this.value, 'school-name')"></p>
             <p><label for="id-volunteer-name">Volunteer name:</label><input type="text" id="id-volunteer-name" onkeyup="set_value(this.value, 'volunteer-name')"></p>
             <p><label for="id-branch">Branch: </label><input type="text" id="branch" onkeyup="set_value(this.value, 'branch-name')"></p>
+            <p>
+                <label for="id-volunteer-photo">Passport size photo of volunteer</label>
+                <input type="file" id="id-volunteer-photo" onchange="loadVolunteerPhoto(event)">
+            </p>
             <p>Students (Click "+" to add more student):<input type="button" value="+" onclick="add_student();"> </p>
             <div class="student-input-area"></div>
             <p>
                 <label for="id-group-photo">Group photo of volunteer and students:</label>
-                <input type="file" id="id-group-photo" onchange="loadImage(event)">
+                <input type="file" id="id-group-photo" onchange="loadGroupPhoto(event)">
             </p>
+            <p>(EXTRA STUDENTS TO WHOM YOU TAUGHT BECAUSE FEW VOLUNTEERS WERE ABSENT)<input type="button" value="+" onclick="extra_add_student();"> </p>
+            <div class="extra-student-input-area"></div>
             <p><label for="id-chapter-name">Chapter name: </label><input type="text" id="id-chapter-name" onkeyup="set_value(this.value, 'chapter-name')"></p>
             <p><label for="id-date">Date: </label><input type="text" id="id-date" onkeyup="set_value(this.value, 'date')"></p>
             <p>
@@ -37,36 +44,60 @@
 
         <div id="section-to-print" class="pdf-view column">
             <div class="heading">
-                <h1>Report to Vedan NGO</h1>
-                <h2>Zero Waste Campus</h2>
-                <hr>
+                <h2>REPORT - VEDAN NGO - ZERO WASTE CAMPUS</h2>
+                <br>
             </div>
-            <div class="author-details">
-                <p>School name: <b id="school-name"></b></p>
-                <p>Volunteer name: <b  id="volunteer-name"></b></p>
-                <p>Branch: <b  id="branch-name"></b></p>
+            <div class="detail-row">
+                <div class="author-details left">
+                    <p>SCHOOL NAME: <b id="school-name"></b></p>
+                    <p>VOLUNTEER NAME: <b  id="volunteer-name"></b></p>
+                    <p>BRANCH: <b  id="branch-name"></b></p>
+                </div>
+                <div class="volunteer-photo">
+                    <img id="volunteer-photo" src="profile.jpg" alt="">
+                </div>
             </div>
+            <style>
+               
+            </style>
+            <p>SCHOOL STUDENTS NAME (YOUR ASSIGNED STUDENTS NAME)
+            </p>
             <div class="student-details">
                 <table>
                     <thead>
-                        <tr><th>SI. No</th><th>Name</th><th>Class</th></tr>
+                        <tr><th>SI. No</th><th>NAME</th><th>CLASS</th></tr>
                     </thead>
                     <tbody id="student-area">
                     </tbody>
                 </table>
             </div>
             <div class="group-photo">
-                <img id="group-photo" src="#" alt="">
+                <img id="group-photo" src="group-photo.jpg" alt="" width="200px">
+                <p>Photo proof</p>
+            </div>
+            <p>(EXTRA STUDENTS TO WHOM YOU TAUGHT BECAUSE FEW VOLUNTEERS WERE ABSENT)</p>
+            <div class="extra-student-details">
+                <table>
+                    <thead>
+                        <tr><th>SI. No</th><th>NAME</th><th>CLASS</th></tr>
+                    </thead>
+                    <tbody id="extra-student-area">
+                    </tbody>
+                </table>
             </div>
             <div class="activity-details">
-                <p>Chapter name: <b id="chapter-name"></b></p>
-                <p>Date: <b id="date"></b></p>
+                <p><b id="chapter-name"></b></p>
+                <p>DATE: <b id="date"></b></p>
                 <p id="brief-note"></p>
             </div>
         </div>
     </div>
     <footer> <small>&copy; Copyright 2022, Bharat Naik</small></a></footer>
-
+    <style>
+        .heading h2{
+            font-family: ALGER;
+        }
+    </style>
     <script src="report-generator.js"></script>
 </body>
 

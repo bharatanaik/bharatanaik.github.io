@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube downloader</title>
+</head>
+
+<body>
+    <header>
+        <h1>Youtube Downloader - Video & Audio </h1>
+    </header>
+
+
+    <div class="url-form">
+        <label for="id_url-input">Youtube URL: </label>
+        <input type="url" id="id_url-input" value="https://youtu.be/CHSnz0bCaUk">
+        <button onclick="get_data()">Get Data</button>
+    </div>
+    <div class="data-area">
+        <p id="data"></p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        function youtube_parser(url) {
+            var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+            var match = url.match(regExp);
+            return (match && match[7].length == 11) ? match[7] : false;
+        }
+        function get_data() {
+            var url = document.querySelector("#id_url-input").value;
+            var endpoint = 'https://www.youtube.com/youtubei/v1/player'
+            var id = youtube_parser(url);
+            var api_key = "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8";
+            var final_url = `${endpoint}?videoId=${id}&key=${api_key}&contentCheckOk=true&racyCheckOk=true`;
+            data = {
+                'context': {
+                    'client': {
+                        'clientName': 'ANDROID',
+                        'clientVersion': '16.20'
+                    }
+                }
+            }
+            var json_data = JSON.stringify(data);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", final_url, true);
+            // xhr.setRequestHeader("User-Agent", "Mozilla/5.0");
+            xhr.setRequestHeader("accept-language", "en-US,en");
+            xhr.setRequestHeader('Content-Type','application/json');
+            xhr.setRequestHeader("Access-Control-Allow-Origin","*");
+            
+            xhr.onload = function(){
+                console.log(this.responseText);
+            }
+            
+            
+            xhr.send(json_data);
+            
+        }
+    </script>
+</body>
+
+</html>

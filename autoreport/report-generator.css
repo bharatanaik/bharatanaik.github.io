@@ -1,12 +1,14 @@
-img#group-photo{
-    width: 100%;
-}
 .heading{
     text-align: center;
     width: 100%;
 }
 
-
+.group-photo{
+  text-align: center;
+}
+img#group-photo{
+  width: 500px;
+}
 table,th, td{
 
     border: 1px solid black;
@@ -33,7 +35,14 @@ table{
     border: none;
   }
 }
-
+.volunteer-photo{
+  margin-right: 20px;
+  height: 250px;
+  overflow: hidden;
+}
+#volunteer-photo{
+  width: 180px;
+}
 .pdf-view , .detail-form{
   border:1px dotted black;
   border-radius: 10px;
@@ -64,6 +73,13 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   box-sizing: border-box;
 }
+.detail-row{
+  display: flex;
+}
+.detail-row .left{
+  flex: auto;   
+}
+
 .mobile-text{
   display: none;
   margin: 10px;
